@@ -27,29 +27,29 @@ class Content extends React.Component {
     } = this.state
     console.log(repos)
     return ( <
-        div >
+        div id = 'listWrap' >
         <
         ul id = 'myList' > {
           repos.map(repo =>
             <
-            li className = 'myListItems' >
+            li className = 'myListItems' >  Repository:
             <
             a href = {
-              repo.url
+              repo.html_url
             } > {
               repo.name
             } <
-            /a><span id='watchers'>Watchers: {
+            /a><span id='watchers'>Watchers : {
             repo.watchers
           } < /span> <
-          span id = 'forks' >Forks: {
+          span id = 'forks' > Forks: {
             repo.forks
           } < /span> < /
           li >
         )
       } <
       /ul> < /
-      div >
+    div >
   )
 }
 }
