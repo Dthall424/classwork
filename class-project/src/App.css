@@ -14,8 +14,7 @@ body {
   display: flex;
 list-style: none;
 justify-content: center;
-margin-top: -8px;
-margin-left: -10px;
+margin-top: 0px;
 background-color: black;
 overflow: auto;
 height: 25px;
