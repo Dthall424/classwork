@@ -31,7 +31,6 @@ class Content extends React.Component {
     } = this.state
     console.log(repos)
     return (
-      { repos.map(repo =>
         <Table celled padded>
           <Table.Header>
             <Table.Row>
@@ -41,7 +40,7 @@ class Content extends React.Component {
               <Table.HeaderCell>Description</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
-
+          { repos.map(repo =>
           <Table.Body>
             <Table.Row>
               <Table.Cell>
