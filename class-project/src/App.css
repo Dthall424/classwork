@@ -81,6 +81,6 @@ color: deepskyblue;
   background-color: #000000;
 }
 
-#listWrap {
-
+#aboutWrap {
+  display: block;
 }

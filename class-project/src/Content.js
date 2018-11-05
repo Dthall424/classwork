@@ -25,6 +25,9 @@ class Content extends React.Component {
     console.log(this.state.repos.length)
   }
 
+  // Creates the table that will store the results of the fetch() request
+  // and display them on the page
+
   render() {
     const {
       repos
@@ -79,35 +82,5 @@ class Content extends React.Component {
       )
 }
 }
-
-
-
-
-    //   <
-    //     div id = 'listWrap' >
-    //     <
-    //     ul id = 'myList' > {
-    //       repos.map(repo =>
-    //         <
-    //         li className = 'myListItems' >  Repository:
-    //         <
-    //         a href = {
-    //           repo.html_url
-    //         } > {
-    //           repo.name
-    //         } <
-    //         /a><span id='watchers'>Watchers : {
-    //         repo.watchers
-    //       } < /span> <
-    //       span id = 'forks' > Forks: {
-    //         repo.forks
-    //       } < /span> < /
-    //       li >
-    //     )
-    //   } <
-    //   /ul> < /
-    // div >
-
-
 
 export default Content
