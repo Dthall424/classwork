@@ -1,15 +1,19 @@
 import React, {
   Component
 } from 'react';
+import {
+  BrowserRouter,
+  Route
+} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import Content from './Content'
-import TableExamplePadded from './testtable'
 import CSS from './App.css'
 
 // This creates the main Navigation bar acrost the top of the page.
 
 const Navbar = (props) => {
   return (
+    <BrowserRouter>
     <div id='sticky'>
       <ul id='navigation'>
         <li><a href="..\HTML\Navlink.html" className="navItems">Home</a></li>
@@ -17,9 +21,9 @@ const Navbar = (props) => {
         <li><a href="..\HTML\Navlink.html" className="navItems">Contact</a></li>
       </ul>
       <Heading />
-      <Content />
-      <TableExamplePadded />
+      <Route path='/HTML/Navlink.html' component={Content} />
     </div>
+    </BrowserRouter>
   );
 }
 

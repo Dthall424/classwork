@@ -1,7 +1,7 @@
 import React, {
   Component
 } from 'react';
-import { Header, Table, Rating } from 'semantic-ui-react'
+import { Header, Table, Rating } from 'semantic-ui-react';
 
 // Creating the "content" component that contains most of the page info.
 
@@ -31,43 +31,57 @@ class Content extends React.Component {
     } = this.state
     console.log(repos)
     return (
+      <div id='myTable'>
         <Table celled padded>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell singleLine>Repository : </Table.HeaderCell>
-              <Table.HeaderCell>Watchers</Table.HeaderCell>
-              <Table.HeaderCell>Forks</Table.HeaderCell>
-              <Table.HeaderCell>Description</Table.HeaderCell>
+              <Table.HeaderCell>Watchers : </Table.HeaderCell>
+              <Table.HeaderCell>Forks : </Table.HeaderCell>
+              <Table.HeaderCell>Language : </Table.HeaderCell>
+              <Table.HeaderCell>Open Issues : </Table.HeaderCell>
+              <Table.HeaderCell>Description : </Table.HeaderCell>
             </Table.Row>
           </Table.Header>
-          { repos.map(repo =>
           <Table.Body>
+          <React.Fragment>
+           { repos.map(repo =>
             <Table.Row>
+            <React.Fragment>
               <Table.Cell>
                 <Header as='h2' textAlign='center'>
                   <a href={repo.html_url}>{repo.name}</a>
                 </Header>
               </Table.Cell>
-              <Table.Cell singleLine>Watchers #</Table.Cell>
-              <Table.Cell singleLine>Forks # #</Table.Cell>
-              <Table.Cell>
-              Purpose of the Repo....maybe ReadMe files
-              </Table.Cell>
+              <Table.Cell singleLine>{
+                  repo.watchers
+             }</Table.Cell>
+              <Table.Cell singleLine>{
+               repo.forks
+              }</Table.Cell>
+              <Table.Cell singleLine>{
+               repo.language
+              }</Table.Cell>
+              <Table.Cell singleLine>{
+               repo.open_issues
+              }</Table.Cell>
+              <Table.Cell singleLine>{
+               repo.description
+              }</Table.Cell>
+              </React.Fragment>
             </Table.Row>
-            <Table.Row>
-              <Table.Cell>
-                <Header as='h2' textAlign='center'>
-                  Repo name***
-                </Header>
-              </Table.Cell>
-              <Table.Cell singleLine>Watchers #</Table.Cell>
-              <Table.Cell singleLine>Forks # #</Table.Cell>
-              <Table.Cell>
-              Purpose of Repo....Maybe ReadMe file
-              </Table.Cell>
-            </Table.Row>
+          )
+          }
+          </React.Fragment>
           </Table.Body>
         </Table>
+        </div>
+      )
+}
+}
+
+
+
 
     //   <
     //     div id = 'listWrap' >
@@ -93,8 +107,7 @@ class Content extends React.Component {
     //   } <
     //   /ul> < /
     // div >
-  )
-}
-}
+
+
 
 export default Content
