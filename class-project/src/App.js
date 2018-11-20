@@ -8,8 +8,11 @@ import {
 } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import Content from './Content'
+import Favorites from './form.js'
 import CSS from './App.css'
 
+//access id : 81nPygGC1sklKvsvaKVf9
+//secret key : KT0WsMNE6Y9a1A6T6AoN4pLYcyOcpj2AFefmsnGN
 // This creates the main Navigation bar acrost the top of the page.
 
 const Navbar = (props) => {
@@ -20,12 +23,14 @@ const Navbar = (props) => {
       <li><Link to={`/Home`} className="navItems">Home</Link></li>
       <li><Link to={`/About`} className="navItems">About</Link></li>
       <li><Link to={`/Contact`} className="navItems">Contact</Link></li>
+      <li><Link to={`/Favorites`} className="navItems">Favorites</Link></li>
     </ul>
-      <Heading />
+      <Route path='/Home' component={Heading} />
       <Route exact path='/' component={Content} />
       <Route path='/Home' component={Content} />
       <Route path='/Contact' component={Contact} />
       <Route path='/About' component={About} />
+      <Route path='/Favorites' component={Favorites} />
     </div>
     </BrowserRouter>
   );
